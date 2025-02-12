@@ -1,7 +1,8 @@
-namespace GerenciarTarefas
-{
-    public class AdicionarTarefas()
-    {
+using Tarefas;
 
+public class GerenciarTarefas
+{
+    public void AdicionarTarefa()
+    {
     }
 }

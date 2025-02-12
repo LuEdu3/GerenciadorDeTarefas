@@ -18,8 +18,6 @@ namespace Layout
             Console.Write("\n0 - Sair\n");
 
             Console.WriteLine($"\nEscolha uma opção: ");
-
-
         }
     }
 }
