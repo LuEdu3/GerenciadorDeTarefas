@@ -8,7 +8,7 @@ namespace Tarefas
         public string Descricao { get; set; }
         public bool Concluido { get; set; }
 
-        public void MetodoTarefa(int id, string descricao)
+        public Tarefa(int id, string descricao)
         {
             Id = id;
             Descricao = descricao;
@@ -18,7 +18,7 @@ namespace Tarefas
         public void ExibirTarefa()
         {
             Console.Write("Tarefas:\n");
-            Console.WriteLine($"[{(Concluido ? "X" : " ")}] ID: {Id} - {Descricao} ");
+            Console.WriteLine($"[\t{(Concluido ? "X" : " ")}] ID: {Id} - {Descricao} ");
         }
     }
 }

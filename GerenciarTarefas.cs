@@ -8,14 +8,14 @@ namespace GerenciarTarefas
     
     public class Gerenciar
     {
-        private static readonly IEnumerable<object> tarefasLista;
+        // private static readonly IEnumerable<object> tarefasLista;
+            List<Tarefa> tarefasLista = new List<Tarefa>();
 
         public static void AdicionarTarefa()
         {   
-            List<string> tarefasLista = new List<string>();
             Console.WriteLine("Adicionar tarefa: ");
             string adicionarLista = Console.ReadLine();
-            tarefasLista.Add(adicionarLista);
+            tarefasLista.Add(new Tarefa(1,adicionarLista));
 
         }
         public static void ListarTarefas()
