@@ -19,5 +19,12 @@ namespace Layout
 
             Console.WriteLine($"\nEscolha uma opção: ");
         }
+
+        public static void Cor(string mensagem, ConsoleColor cor)
+        {
+            Console.ForegroundColor = cor;
+            Console.WriteLine(mensagem);
+            Console.ResetColor();
+        }
     }
 }
