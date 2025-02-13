@@ -17,13 +17,13 @@ namespace Layout
             Console.Write("\n4 - Remover Tarefa");
             Console.Write("\n0 - Sair\n");
 
-            Console.WriteLine($"\nEscolha uma opção: ");
+            Console.Write($"\nEscolha uma opção: ");
         }
 
         public static void Cor(string mensagem, ConsoleColor cor)
         {
             Console.ForegroundColor = cor;
-            Console.WriteLine(mensagem);
+            Console.Write(mensagem);
             Console.ResetColor();
         }
     }

@@ -1,7 +1,10 @@
-﻿using Tarefas;
-using Layout;
+﻿using Layout;
 using GerenciarTarefas;
+using Tarefas;
+using System.Net.Sockets;
 Console.Clear();
+Gerenciar opc1 = new Gerenciar();
+
 while (true)
 {
     Formatacao.ImprimirCabecalho();
@@ -10,22 +13,30 @@ while (true)
         switch (opcao)
         {
             case 1:
-            Gerenciar opc1 = new Gerenciar();
+            Console.Clear();
             opc1.AdicionarTarefa();
             break;
 
             case 2:
-            Gerenciar opc2 = new Gerenciar();
-            opc2.ListarTarefas();
+            Console.Clear();
+            opc1.ListarTarefas();
             break;
 
-            // case 3:
-            // Gerenciar.AdicionarTarefa();
-            // break;
+            case 3:
+            Console.Clear();
+            opc1.ListarTarefas();
+            opc1.ConcluirTarefa();
+            Console.Clear();
+            opc1.ListarTarefas();
+            break;
 
-            // case 4:
-            // Gerenciar.AdicionarTarefa();
-            // break;
+            case 4:
+            Console.Clear();
+            opc1.ListarTarefas();
+            opc1.RemoverTarefa();
+            Console.Clear();
+            opc1.ListarTarefas();
+            break;
 
             // case 0:
             // Gerenciar.AdicionarTarefa();

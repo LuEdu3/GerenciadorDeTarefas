@@ -1,4 +1,5 @@
 using System.Data.Common;
+using Layout;
 
 namespace Tarefas
 {
@@ -14,11 +15,9 @@ namespace Tarefas
             Descricao = descricao;
             Concluido = false;
         }
-
-        public void ExibirTarefa()
-        {
-            Console.Write("Tarefas:\n");
-            Console.WriteLine($"[\t{(Concluido ? "X" : " ")}] ID: {Id} - {Descricao} ");
+         public void Concluir(){
+            Concluido = true;
         }
+        public string ExibirTarefa => $"[{(Concluido ? "X" : " ")}] ID: {Id.ToString()} - {Descricao}";
     }
 }
