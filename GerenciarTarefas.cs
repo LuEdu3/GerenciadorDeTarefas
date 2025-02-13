@@ -1,28 +1,42 @@
 using System.ComponentModel;
 using System.Data.Common;
 using System.Formats.Tar;
+using System.Reflection.PortableExecutable;
 using Tarefas;
+using Layout;
 
 namespace GerenciarTarefas
 {
-    
+
     public class Gerenciar
     {
         // private static readonly IEnumerable<object> tarefasLista;
-            List<Tarefa> tarefasLista = new List<Tarefa>();
+        private List<Tarefa> tarefasLista = new List<Tarefa>();
+        private int IdCount = 1;
 
-        public static void AdicionarTarefa()
-        {   
+        public void AdicionarTarefa()
+        {
             Console.WriteLine("Adicionar tarefa: ");
             string adicionarLista = Console.ReadLine();
-            tarefasLista.Add(new Tarefa(1,adicionarLista));
+            tarefasLista.Add(new Tarefa(IdCount, adicionarLista));
+            IdCount++;
 
         }
-        public static void ListarTarefas()
+        public void ListarTarefas()
         {
-            foreach(var tarf in tarefasLista)
+            if (tarefasLista.Count == 0)
             {
-                Console.WriteLine($"{tarf}\n");
+                Formatacao.Cor("Nao há tarefas", ConsoleColor.White);
+
+            }
+            else
+            {
+                Formatacao.Cor("Tarefas: ", ConsoleColor.White);
+                foreach (var tarf in tarefasLista)
+                {
+                    Console.WriteLine($"{tarf}\n");
+
+                }
             }
         }
     }

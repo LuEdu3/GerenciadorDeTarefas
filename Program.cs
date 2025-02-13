@@ -10,11 +10,13 @@ while (true)
         switch (opcao)
         {
             case 1:
-            Gerenciar.AdicionarTarefa();
+            Gerenciar opc1 = new Gerenciar();
+            opc1.AdicionarTarefa();
             break;
 
             case 2:
-            Gerenciar.ListarTarefas();
+            Gerenciar opc2 = new Gerenciar();
+            opc2.ListarTarefas();
             break;
 
             // case 3:
