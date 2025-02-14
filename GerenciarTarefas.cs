@@ -19,6 +19,7 @@ namespace GerenciarTarefas
             Console.Write("Adicionar tarefa: ");
             string adicionarLista = Console.ReadLine();
             tarefasLista.Add(new Tarefa(IdCount, adicionarLista));
+            Formatacao.Cor("Tarefa Adicionada", ConsoleColor.Green);
             IdCount++;
 
         }
