@@ -18,8 +18,8 @@ namespace GerenciarTarefas
         {
             Console.Write("Adicionar tarefa: ");
             string adicionarLista = Console.ReadLine();
-            tarefasLista.Add(new Tarefa(IdCount, adicionarLista));
-            IdCount++;
+            tarefasLista.Add(new Tarefa(IdCount++, adicionarLista));
+            // IdCount++;
 
         }
         public void ListarTarefas()
@@ -61,7 +61,7 @@ namespace GerenciarTarefas
             if(tarefaRetorno != null)
             {
                 tarefasLista.Remove(tarefaRetorno);
-                Formatacao.Cor($"Tarefa concluída\n", ConsoleColor.Green);
+                Formatacao.Cor($"Tarefa removida\n", ConsoleColor.Green);
             }
             else
             {

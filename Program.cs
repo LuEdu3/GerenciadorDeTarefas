@@ -26,16 +26,16 @@ while (true)
             Console.Clear();
             opc1.ListarTarefas();
             opc1.ConcluirTarefa();
-            Console.Clear();
-            opc1.ListarTarefas();
+            // Console.Clear();
+            // opc1.ListarTarefas();
             break;
 
             case 4:
             Console.Clear();
             opc1.ListarTarefas();
             opc1.RemoverTarefa();
-            Console.Clear();
-            opc1.ListarTarefas();
+            // Console.Clear();
+            // opc1.ListarTarefas();
             break;
 
             // case 0:
