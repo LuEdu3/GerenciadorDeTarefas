@@ -15,7 +15,8 @@ namespace Tarefas
             Descricao = descricao;
             Concluido = false;
         }
-         public void Concluir(){
+        public void Concluir()
+        {
             Concluido = true;
         }
         public string ExibirTarefa => $"[{(Concluido ? "X" : " ")}] ID: {Id.ToString()} - {Descricao}";
