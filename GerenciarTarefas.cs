@@ -16,10 +16,20 @@ namespace GerenciarTarefas
 
         public void AdicionarTarefa()
         {
+            return3:
             Console.Write("Adicionar tarefa: ");
             string adicionarLista = Console.ReadLine();
-            tarefasLista.Add(new Tarefa(IdCount++, adicionarLista));
-            // IdCount++;
+            if(string.IsNullOrWhiteSpace(adicionarLista))
+            {
+                Formatacao.Cor("Não é possivel inserir tarefas vazias!\n", ConsoleColor.Red);
+                goto return3;
+            }
+            else
+            {
+            tarefasLista.Add(new Tarefa(IdCount, adicionarLista));
+            Formatacao.Cor("Tarefa Adicionada\n", ConsoleColor.Green);
+            IdCount++;
+            }
 
         }
         public void ListarTarefas()
@@ -40,33 +50,51 @@ namespace GerenciarTarefas
         }
         public void ConcluirTarefa()
         {
+            return2:
             Console.Write("\nDigite o Id da tarefa concluída: ", ConsoleColor.White);
-            int concluirId = int.Parse(Console.ReadLine());
-            Tarefa tarefaRetorno = tarefasLista.Find(t => t.Id == concluirId);
-            if(tarefaRetorno != null)
+            // int concluirId = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int concluirId))
             {
-                tarefaRetorno.Concluir();
-                Formatacao.Cor($"Tarefa concluída\n", ConsoleColor.Green);
+                Formatacao.Cor("Tarefa não encontrada\n", ConsoleColor.Red);
+                goto return2;
             }
             else
             {
-                Formatacao.Cor("Tarefa não encontrada", ConsoleColor.White);
+                Tarefa tarefaRetorno = tarefasLista.Find(t => t.Id == concluirId);
+                if (tarefaRetorno != null)
+                {
+                    tarefaRetorno.Concluir();
+                    Formatacao.Cor($"Tarefa concluída\n", ConsoleColor.Green);
+                }
             }
+            // else
+            // {
+            //     Formatacao.Cor("Tarefa não encontrada", ConsoleColor.White);
+            // }
         }
         public void RemoverTarefa()
         {
             Console.Write("Digite o Id da tarefa que deseja remover: ", ConsoleColor.White);
-            int removerId = int.Parse(Console.ReadLine());
-            Tarefa tarefaRetorno = tarefasLista.Find(t => t.Id == removerId);
-            if(tarefaRetorno != null)
+            // int removerId = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int removerId))
             {
                 tarefasLista.Remove(tarefaRetorno);
-                Formatacao.Cor($"Tarefa removida\n", ConsoleColor.Green);
+                Formatacao.Cor($"Tarefa concluída\n", ConsoleColor.Green);
             }
             else
             {
-                Formatacao.Cor("Tarefa não encontrada", ConsoleColor.White);
+
+                Tarefa tarefaRetorno = tarefasLista.Find(t => t.Id == removerId);
+                if (tarefaRetorno != null)
+                {
+                    tarefasLista.Remove(tarefaRetorno);
+                    Formatacao.Cor($"Tarefa removida\n", ConsoleColor.Green);
+                }
             }
+            // else
+            // {
+            //     Formatacao.Cor("Tarefa não encontrada", ConsoleColor.White);
+            // }
         }
     }
 }
