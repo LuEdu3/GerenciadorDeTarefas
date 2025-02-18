@@ -8,10 +8,11 @@ int opcao = 0;
 do
 {
 return1:
-    Formatacao.ImprimirCabecalho();
+    Console.Write("\n"); Formatacao.ImprimirCabecalho();
     if (!int.TryParse(Console.ReadLine(), out opcao))
     {
-        Formatacao.Cor("Opção invalida.\n", ConsoleColor.Red);
+        Console.Clear();
+        Formatacao.Cor("\n\tOpção invalida.\n", ConsoleColor.Red);
          goto return1;
     }
     else

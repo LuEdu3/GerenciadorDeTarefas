@@ -5,17 +5,17 @@ namespace Layout
 
         public static void ImprimirCabecalho()
         {
-            Console.WriteLine("╔════════════════════════════════╗");
-            Console.WriteLine("║     gerenciador de tarefas     ║");
-            Console.WriteLine("╚════════════════════════════════╝");
+            Console.WriteLine("\t\t\t\t╔════════════════════════════════╗");
+            Console.WriteLine("\t\t\t\t║     gerenciador de tarefas     ║".ToUpper());
+            Console.WriteLine("\t\t\t\t╚════════════════════════════════╝");
 
-            Console.Write("\n1 - Adicionar Tarefa");
-            Console.Write("\n2 - Listar Tarefas");
-            Console.Write("\n3 - Concluir Tarefa");
-            Console.Write("\n4 - Remover Tarefa");
-            Console.Write("\n0 - Sair\n");
+            Console.Write("\n\t1 - Adicionar Tarefa\n");
+            Console.Write("\n\t2 - Listar Tarefas\n");
+            Console.Write("\n\t3 - Concluir Tarefa\n");
+            Console.Write("\n\t4 - Remover Tarefa\n");
+            Console.Write("\n\t0 - Sair\n");
 
-            Console.Write($"\nEscolha uma opção: ");
+            Console.Write($"\n\tEscolha uma opção: ");
         }
 
         public static void Cor(string mensagem, ConsoleColor cor)
