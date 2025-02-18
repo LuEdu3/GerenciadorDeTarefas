@@ -26,9 +26,9 @@ namespace GerenciarTarefas
             }
             else
             {
-            tarefasLista.Add(new Tarefa(IdCount, adicionarLista));
+            tarefasLista.Add(new Tarefa(IdCount++, adicionarLista));
             Formatacao.Cor("Tarefa Adicionada\n", ConsoleColor.Green);
-            IdCount++;
+            // IdCount++;
             }
 
         }
@@ -78,8 +78,7 @@ namespace GerenciarTarefas
             // int removerId = int.Parse(Console.ReadLine());
             if (!int.TryParse(Console.ReadLine(), out int removerId))
             {
-                tarefasLista.Remove(tarefaRetorno);
-                Formatacao.Cor($"Tarefa concluída\n", ConsoleColor.Green);
+                Formatacao.Cor("Tarefa não encontrada\n", ConsoleColor.Red);
             }
             else
             {
